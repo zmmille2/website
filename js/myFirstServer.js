@@ -11,6 +11,7 @@ app.locals.email = "zmmille2@gmail.com"
 
 // use pug as our viewing engine
 app.set('view engine', 'pug');
+app.set('views', __dirname + '/../views/');
 
 // Without any specification, connect to the home page.
 app.get('/', function(req, res) {
