@@ -12,10 +12,12 @@ app.locals.email = "zmmille2@gmail.com"
 // use pug as our viewing engine
 app.set('view engine', 'pug');
 
+// Without any specification, connect to the home page.
 app.get('/', function(req, res) {
     res.render('index', {});
 });
 
+// If we don't match any of the subpages, connect to the 404 page.
 app.get('*', function(req, res) {
     res.status(404).render('404', {})
 });
