@@ -19,6 +19,7 @@ app.get('/', function(req, res) {
 });
 
 // If we don't match any of the subpages, connect to the 404 page.
+// This should go at the end.
 app.get('*', function(req, res) {
     res.status(404).render('404', {})
 });
