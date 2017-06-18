@@ -1,6 +1,7 @@
 // use express and pug to start this bad boy
 var express = require('express');
 var pug = require('pug');
+var mongoClient = require('mongodb').MongoClient;
 
 // start the app!
 var app = express();
@@ -8,6 +9,12 @@ var app = express();
 // Let's say who this is, and show that js can handle different quotation types!
 app.locals.title = "Zach's site"
 app.locals.email = "zmmille2@gmail.com"
+
+mongoClient.connect("mongodb://localhost:27107/exampleDb", function(err, db) {
+    if (!err) {
+        console.log("Connection successful!");
+    }
+})
 
 // use pug as our viewing engine
 app.set('view engine', 'pug');
